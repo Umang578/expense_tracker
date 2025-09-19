@@ -10,7 +10,7 @@ const app = express();
 const PORT = process.env.PORT;
 app.use(cookieParser());
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: process.env.FRONTEND_URI,
     credentials: true,
 }));
 app.use(express.json());
@@ -22,8 +22,8 @@ app.use("/api/v1/user", userRoutes);
 app.use("/api/v1/expense", expenseRoutes);
 
 connectDB()
-.then(() => {
-    app.listen(PORT, () =>
-        console.log(`🚀 Server running on http://localhost:${PORT}`)
-    );
-});
+    .then(() => {
+        app.listen(PORT, () =>
+            console.log(`🚀 Server running on http://localhost:${PORT}`)
+        );
+    });
