@@ -8,10 +8,8 @@ dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT;
-app.use(cookieParser());
 app.use(cors({
     origin: process.env.FRONTEND_URI,
-    credentials: true,
 }));
 app.use(express.json());
 
