@@ -1,0 +1,17 @@
+{
+  "name": "expense-tracker-main",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "frontend:dev": "cd client && npm run dev",
+    "backend:dev": "cd server && npm run dev",
+    "dev": "concurrently \"npm run frontend:dev\" \"npm run backend:dev\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
